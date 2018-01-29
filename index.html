@@ -1,9 +1,18 @@
 <html>
 <head>
 	<title>Javascript Box - OOP demo</title>
+	<!-- Created that style sheet to size the browser -->
+	<style> 
+	#svg{
+		width: 100%;
+		height: 95%;
+		padding: 10px;
+	}
+
+	</style>
 </head>
 <body>
-
+<div id="main-container">
 	<svg id="svg" xmlns="http://www.w3.org/2000/svg"></svg>
 
 	<script>
@@ -40,11 +49,11 @@
 			var el = document.getElementById(html_id);
 
 			//see if the circle is going outside the browser. if it is, reverse the velocity
-			if( this.info.cx > document.body.clientWidth || this.info.cx < 0)
+			if( this.info.cx > document.body.clientWidth -45|| this.info.cx < 0) //changed the width so circles dont go off the screen
 			{
 				this.info.velocity.x = this.info.velocity.x * -1;
 			}
-			if( this.info.cy > document.body.clientHeight || this.info.cy < 0)
+			if( this.info.cy > document.body.clientHeight -55 || this.info.cy < 0) //changed the height so circles dont go off the screen
 			{
 				this.info.velocity.y = this.info.velocity.y * -1;
 			}
@@ -100,6 +109,6 @@
 	}
 	
 	</script>
-
+</div>
 </body>
 </html>
